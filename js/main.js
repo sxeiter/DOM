@@ -19,18 +19,29 @@ items[4].before(items[0]);
 
 
 propsItemFour[2].after(propsItemFour[5]);
-itemTwoTrue[7].after(itemTwoFalse[0]);
 itemTwoTrue[7].after(itemTwoFalse[1]);
+itemTwoTrue[7].after(itemTwoFalse[0]);
 
 const cloneTitleOne = itemTitles[1].cloneNode(true);
 const cloneTitleFour = itemTitles[3].cloneNode(true);
 const cloneTitleFive = itemTitles[4].cloneNode(true);
+console.log(cloneTitleOne);
+console.log(cloneTitleFour);
+console.log(cloneTitleFive);
+
+const h2 = document.createElement('h2');
+const textTitle = document.createTextNode('This и прототипы объектов');
+h2.append(textTitle);
+itemTitles[2].replaceWith(h2);
+
+
 itemTitles[1].remove();
 itemTitles[3].remove();
 itemTitles[4].remove();
 propsList[2].before(cloneTitleFour);
 propsList[4].before(cloneTitleFive);
 propsList[5].before(cloneTitleOne);
+
 
 const clone = propsList[3].cloneNode(true);
 propsList[3].replaceWith(propsList[4]);
